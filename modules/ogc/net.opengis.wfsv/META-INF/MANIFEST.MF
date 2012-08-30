@@ -1,10 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-SymbolicName: net.opengis.wfsv; singleton:=true
-Bundle-Version: 1.0.0
-Bundle-ClassPath: .
-Bundle-Vendor: %providerName
+Bundle-Name: Web Feature Service Versioning Model
+Bundle-SymbolicName: net.opengis.wfsv;singleton:=true
+Bundle-Version: 8.0.0.M1osgi2
+Bundle-Vendor: Harman/Becker
 Bundle-Localization: plugin
 Export-Package: net.opengis.wfsv,
  net.opengis.wfsv.impl,

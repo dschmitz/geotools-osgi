@@ -5,7 +5,7 @@
         The Geotools Project                                                    
             http://www.geotools.org/                                            
                                                                                 
-        Version: $Id$              
+        Version: $Id: pom.xml 37561 2011-07-04 16:11:41Z jive $              
      ======================================================================= -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -16,13 +16,13 @@
     <parent>
         <groupId>org.geotools</groupId>
         <artifactId>unsupported</artifactId>
-        <version>8.0</version>
+        <version>8.0.0.M1osgi2</version>
     </parent>
 
 
-  <!-- =========================================================== -->
-  <!--     Module Description                                      -->
-  <!-- =========================================================== -->
+   <!-- =========================================================== -->
+   <!--     Module Description                                      -->
+   <!-- =========================================================== -->
     <groupId>org.geotools</groupId>
     <artifactId>gt-process</artifactId>
     <packaging>jar</packaging>
@@ -40,7 +40,7 @@
       collection of pre-written processes including vector/raster
       conversion.
     </description>
-  
+
     <licenses>
         <license>
             <name>Lesser General Public License (LGPL)</name>
@@ -50,9 +50,9 @@
     </licenses>
 
 
-  <!-- =========================================================== -->
-  <!--     Developers and Contributors                             -->
-  <!-- =========================================================== -->
+   <!-- =========================================================== -->
+   <!--     Developers and Contributors                             -->
+   <!-- =========================================================== -->
     <developers>
         <developer>
             <id>gdavis</id>
@@ -68,6 +68,8 @@
             <id>mbedward</id>
             <name>Michael Bedward</name>
             <email>michael.bedward@gmail.com</email>
+            <organization>Dept Environment and Climate Change</organization>
+            <organizationUrl>http://www.environment.nsw.gov.au</organizationUrl>
             <timezone>+10</timezone>
             <roles>
                 <role>Java Developer</role>
@@ -77,9 +79,9 @@
     </developers>
 
 
-  <!-- =========================================================== -->
-  <!--     Dependency Mangement                                    -->
-  <!-- =========================================================== -->
+   <!-- =========================================================== -->
+   <!--     Dependency Mangement                                    -->
+   <!-- =========================================================== -->
     <dependencies>
         <dependency>
             <groupId>org.geotools</groupId>
@@ -106,11 +108,6 @@
             <artifactId>gt-cql</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>javax.media</groupId>
-            <artifactId>jai_imageio</artifactId>
-            <!-- The version number is specified in the parent POM. -->
-        </dependency>
 
         <!-- Test dependencies -->
         <dependency>
@@ -125,12 +122,50 @@
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>javax.media</groupId>
-            <artifactId>jai_codec</artifactId>
-	    <!-- The version number is specified in the parent POM. -->
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
+	  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>META-INF/MANIFEST.MF</manifestFile>
+            <manifest>
+              <addClasspath>false</addClasspath>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+        <inherited>true</inherited>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.1.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration> 
+          <attach>true</attach>                 
+          <archive>
+            <manifestEntries>
+              <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+              <Bundle-Name>${name}</Bundle-Name>
+              <Bundle-SymbolicName>${groupId}.process.source
+              </Bundle-SymbolicName>
+              <Bundle-Version>${version}</Bundle-Version>
+              <Eclipse-SourceBundle>
+                ${groupId}.process;version="${version}";roots:="."
+              </Eclipse-SourceBundle>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

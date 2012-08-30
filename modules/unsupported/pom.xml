@@ -5,7 +5,7 @@
         The Geotools Project
             http://www.geotools.org/
 
-        Version: $Id$
+        Version: $Id: pom.xml 37561 2011-07-04 16:11:41Z jive $
      ======================================================================= -->
   <project xmlns="http://maven.apache.org/POM/4.0.0" 
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -16,7 +16,7 @@
   <parent>
     <groupId>org.geotools</groupId>
     <artifactId>modules</artifactId>
-    <version>8.0</version>
+    <version>8.0.0.M1osgi2</version>
   </parent>
 
 
@@ -86,6 +86,10 @@
        </activation>
        <modules>
          <module>coveragetools</module>
+<!-- SBorodavkin: moved to profile workflow
+         <module>imagemosaic-sql</module>
+         <module>imagemosaic-base</module>
+         <module>imagemosaic-shp</module> -->
        </modules>
      </profile>
      <profile>
@@ -105,17 +109,19 @@
        </activation>
        <modules>
          <module>wps</module>
+<!-- SBorodavkin: we need these modules to build Anaconda platform -->
+         <module>imagemosaic-base</module>
+         <module>imagemosaic-sql</module>
+         <module>imagemosaic-shp</module>
        </modules>
      </profile>
      <profile>
-       <id>process</id>
+       <id>epsg-h2</id>
        <activation>
          <property><name>all</name></property>
        </activation>
        <modules>
-         <module>process-geometry</module>
-         <module>process-raster</module>
-         <module>process-feature</module>
+         <module>epsg-h2</module>
        </modules>
      </profile>
      <profile>
@@ -142,19 +148,7 @@
          <module>swt</module>
        </modules>
      </profile>
-     <profile>
-       <id>feature-aggreate</id>
-       <modules>
-         <module>feature-aggreate</module>
-       </modules>
-     </profile>
-     <profile>
-       <id>ogr</id>
-       <modules>
-         <module>ogr</module>
-       </modules>
-     </profile>
-     
+
      <profile>
        <id>unsupported</id>
        <activation>
@@ -169,10 +163,6 @@
          <module>matfile5</module>
          <module>sfs</module>
          <module>mark-wkt</module>
-         <module>feature-aggregate</module>
-         <module>mongodb</module>
-         <module>property-ng</module>
-         <module>shapefile-ng</module>
        </modules>
      </profile>
   </profiles>
@@ -180,7 +170,6 @@
   <!-- Modules included in a normal build -->
   <modules>
     <module>swing</module>
-    <module>swt</module>
     <module>process</module>
     <module>wfs</module>
     <module>geojson</module>

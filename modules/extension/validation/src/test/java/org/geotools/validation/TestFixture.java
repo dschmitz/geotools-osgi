@@ -50,6 +50,7 @@ import org.geotools.validation.xml.XMLReader;
  *
  *
  * @source $URL$
+ * @source $URL: http://svn.osgeo.org/geotools/tags/8.0-M1/modules/extension/validation/src/test/java/org/geotools/validation/TestFixture.java $
  */
 public class TestFixture {
     Repository data = new DefaultRepository();

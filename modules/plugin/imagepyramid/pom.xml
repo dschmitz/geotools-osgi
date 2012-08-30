@@ -5,7 +5,7 @@
         The Geotools Project                                                    
             http://www.geotools.org/                                            
                                                                                 
-        Version: $Id$              
+        Version: $Id: pom.xml 37561 2011-07-04 16:11:41Z jive $              
      ======================================================================= -->
   <project xmlns="http://maven.apache.org/POM/4.0.0" 
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -16,7 +16,7 @@
   <parent>
     <groupId>org.geotools</groupId>
     <artifactId>plugin</artifactId>
-    <version>8.0</version>
+    <version>8.0.0.M1osgi2</version>
   </parent>
 
   <!--properties>
@@ -84,6 +84,7 @@
     <dependency>
       <groupId>commons-io</groupId>
       <artifactId>commons-io</artifactId>
+      <version>1.4</version>
     </dependency>    
     
 
@@ -96,16 +97,28 @@
     </dependency>
     <dependency>
       <groupId>javax.media</groupId>
-      <artifactId>jai_codec</artifactId>
+      <artifactId>javax.media.jai.osgi</artifactId>
       <!-- The version number is specified in the parent POM. -->
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>javax.media</groupId>
-      <artifactId>jai_imageio</artifactId>
+      <groupId>javax.media.jai.osgi</groupId>
+      <artifactId>javax.media.jai.osgi.jai_imageio</artifactId>
       <!-- The version number is specified in the parent POM. -->
       <scope>test</scope>
     </dependency>
   </dependencies>
 
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>

@@ -23,4 +23,4 @@ For any comment, suggestion or contribution to this code,
 email to the geotools-devel@sourceforge.net mailing list
 or contact me directly at groldan@users.sourceforge.net
 
-Gabriel Roldán.
+Gabriel Roldn.

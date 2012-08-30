@@ -16,7 +16,7 @@
     <parent>
         <groupId>org.geotools</groupId>
         <artifactId>unsupported</artifactId>
-        <version>8.0</version>
+        <version>8.0.0.M1osgi2</version>
     </parent>
 
   <!-- =========================================================== -->
@@ -67,6 +67,8 @@
             <name>Michael Bedward</name>
             <id>mbedward</id>
             <email>michael.bedward@gmail.com</email>
+            <organization>DECCW</organization>
+            <organizationUrl>http://www.environment.nsw.gov.au</organizationUrl>
             <timezone>+10</timezone>
             <roles>
                 <role>Module Maintainer</role>
@@ -79,11 +81,6 @@
         <!--   GeoTools modules   -->
         <dependency>
             <groupId>org.geotools</groupId>
-            <artifactId>gt-referencing</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.geotools</groupId>
             <artifactId>gt-render</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -91,40 +88,13 @@
             <groupId>org.geotools</groupId>
             <artifactId>gt-wms</artifactId>
             <version>${project.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.geotools</groupId>
-            <artifactId>gt-process</artifactId>
-            <version>${project.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.geotools</groupId>
-            <artifactId>gt-epsg-hsql</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.geotools</groupId>
-            <artifactId>gt-geotiff</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.geotools</groupId>
-            <artifactId>gt-sample-data</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.geotools</groupId>
             <artifactId>gt-shapefile</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
-        </dependency>
-
+        </dependency>        
         <!--   Third-party dependencies   -->
         <dependency>
             <groupId>com.miglayout</groupId>
@@ -132,17 +102,51 @@
             <version>3.7</version>
             <classifier>swing</classifier>
         </dependency>
-        <dependency>
-            <groupId>org.easytesting</groupId>
-            <artifactId>fest-swing-junit</artifactId>
-            <version>1.2.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jaitools</groupId>
-            <artifactId>jt-utils</artifactId>
-            <version>${jt.version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
+    <build>
+      <plugins>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+            <archive>
+              <manifestFile>META-INF/MANIFEST.MF</manifestFile>
+              <manifest>
+                <addClasspath>false</addClasspath>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
+        <plugin>
+        <inherited>true</inherited>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.1.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration> 
+          <attach>true</attach>                 
+          <archive>
+            <manifestEntries>
+              <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+              <Bundle-Name>${name}</Bundle-Name>
+              <Bundle-SymbolicName>${groupId}.swing.source
+              </Bundle-SymbolicName>
+              <Bundle-Version>${version}</Bundle-Version>
+              <Eclipse-SourceBundle>
+                ${groupId}.swing;version="${version}";roots:="."
+              </Eclipse-SourceBundle>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+    </build>
+    
 </project>
