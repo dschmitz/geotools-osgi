@@ -46,9 +46,10 @@
   <dependencies>
     <dependency>
       <groupId>javax.media</groupId>
-      <artifactId>jai_core</artifactId>
+      <artifactId>javax.media.jai.osgi</artifactId>
       <!-- The version number is specified in the parent POM. -->
-    </dependency>
+      <scope>provided</scope>  <!-- Users should execute JAI installer. -->
+   </dependency>
   </dependencies>
 
 
