@@ -5,7 +5,7 @@
   <artifactId>de.berlios.it.geosolutions.imageio.ext.arcgrid</artifactId>
   <packaging>bundle</packaging>
   <name>ImageIO Extensions Utilities</name>
-  <version>1.1.0</version>
+  <version>1.1.4</version>
   <parent>
     <groupId>org.geotools</groupId>
     <artifactId>thirdparty</artifactId>
@@ -15,7 +15,7 @@
     <dependency>
       <groupId>it.geosolutions.imageio-ext</groupId>
       <artifactId>imageio-ext-arcgrid</artifactId>
-      <version>1.1.0</version>
+      <version>1.1.4</version>
     </dependency>
   </dependencies>
   <build>
