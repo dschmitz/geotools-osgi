@@ -110,8 +110,8 @@
       <scope>test</scope>
     </dependency>    
     <dependency>
-      <groupId>xmlunit</groupId>
-      <artifactId>xmlunit</artifactId>
+      <groupId>org.custommonkey.xmlunit</groupId>
+      <artifactId>com.springsource.org.custommonkey.xmlunit</artifactId>
       <scope>test</scope>
     </dependency>    
   </dependencies>
