@@ -642,6 +642,11 @@
       </dependency>
       <dependency>
         <groupId>it.geosolutions.imageio-ext</groupId>
+        <artifactId>imageio-ext-gdalidrisi</artifactId>
+        <version>${imageio.ext.version}</version>
+      </dependency> 
+      <dependency>
+        <groupId>it.geosolutions.imageio-ext</groupId>
         <artifactId>imageio-ext-gdalmrsidjp2</artifactId>
         <version>${imageio.ext.version}</version>
       </dependency>
