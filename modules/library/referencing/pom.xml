@@ -194,7 +194,11 @@
       <artifactId>javax.media.jai.osgi</artifactId>
       <!-- The version number is specified in the parent POM. -->
     </dependency>
-
+    <dependency>
+      <groupId>jgridshift</groupId>
+      <artifactId>jgridshift</artifactId>
+      <version>1.0</version>
+    </dependency>
     <!-- Test dependencies -->
     <dependency>
       <groupId>org.geotools</groupId>
