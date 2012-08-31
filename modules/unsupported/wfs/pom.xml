@@ -113,7 +113,7 @@
     </dependency>
     <dependency>
       <groupId>xpp3</groupId>
-      <artifactId>xpp3_min</artifactId>
+      <artifactId>xpp3</artifactId>
     </dependency>
     <dependency>
       <groupId>commons-httpclient</groupId>
