@@ -109,10 +109,12 @@
             <version>${project.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.media</groupId>
-            <artifactId>jai_imageio</artifactId>
-            <!-- The version number is specified in the parent POM. -->
+            <groupId>javax.media.jai.osgi</groupId>
+            <artifactId>javax.media.jai.osgi.jai_imageio</artifactId>
         </dependency>
+
+
+
         <!-- Test dependencies -->
         <dependency>
             <groupId>org.geotools</groupId>
@@ -127,9 +129,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>javax.media</groupId>
-            <artifactId>jai_codec</artifactId>
-            <!-- The version number is specified in the parent POM. -->
+  	    <groupId>javax.media</groupId>
+            <artifactId>javax.media.jai.osgi</artifactId>
             <scope>test</scope>
         </dependency>
   </dependencies>
