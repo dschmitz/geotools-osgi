@@ -150,6 +150,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.geotools</groupId>
+      <artifactId>gt-geotiff</artifactId>
+      <version>${project.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>com.springsource.org.apache.commons.beanutils</artifactId>
       <scope>test</scope>
