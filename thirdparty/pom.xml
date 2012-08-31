@@ -46,6 +46,7 @@
     <module>javax.media.jai.osgi.imageio.linux.x86_64</module>
     <module>java3d.osgi</module>
     <module>com.vividsolutions.osgi.jts</module>
+    <module>au.com.objectix.osgi.jgridshift</module>
     <module>org.jaitools.osgi.jt-utils</module>
     <module>org.jaitools.osgi.jt-vectorbinarize</module>
     <module>org.jaitools.osgi.jt-zonalstats</module>
@@ -61,7 +62,7 @@
     <module>com.springsource.com.lowagie.text</module>
     <module>com.springsource.org.apache.bcel</module>
     <module>com.springsource.org.apache.commons.collections</module>
-	<module>com.springsource.org.apache.commons.jxpath</module>
+    <module>com.springsource.org.apache.commons.jxpath</module>
     <module>com.springsource.org.apache.commons.beanutils</module>
     <module>com.springsource.org.apache.regexp</module>
     <module>com.springsource.org.apache.xalan</module>
@@ -81,7 +82,7 @@
     <module>com.springsource.org.junit</module>
     <module>com.springsource.org.hamcrest.core</module>
     <module>de.berlios.com.google.google-collections</module>
-	<module>com.springsource.javax.servlet.jsp</module>
-	<module>com.springsource.javax.el</module>
+    <module>com.springsource.javax.servlet.jsp</module>
+    <module>com.springsource.javax.el</module>
   </modules>
 </project>

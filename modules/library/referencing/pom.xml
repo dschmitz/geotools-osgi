@@ -195,8 +195,8 @@
       <!-- The version number is specified in the parent POM. -->
     </dependency>
     <dependency>
-      <groupId>jgridshift</groupId>
-      <artifactId>jgridshift</artifactId>
+      <groupId>au.com.objectix.osgi</groupId>
+      <artifactId>au.com.objectix.osgi.jgridshift</artifactId>
       <version>1.0</version>
     </dependency>
     <!-- Test dependencies -->
