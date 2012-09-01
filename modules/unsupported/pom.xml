@@ -179,7 +179,7 @@
 
   <!-- Modules included in a normal build -->
   <modules>
-    <module>swing</module>
+    <!--module>swing</module-->
     <module>swt</module>
     <module>process</module>
     <module>wfs</module>
